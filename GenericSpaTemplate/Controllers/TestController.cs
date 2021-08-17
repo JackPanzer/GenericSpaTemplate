@@ -27,5 +27,15 @@ namespace GenericSpaTemplate
                 new TestData { Id = Guid.NewGuid(), Time = DateTimeOffset.Now }
             });
         }
+
+        [HttpGet("another-get")]
+        public IActionResult ReturnMoreTestData()
+        {
+            return new OkObjectResult(new List<TestData>()
+            {
+                new TestData { Id = Guid.NewGuid(), Time = DateTimeOffset.Now },
+                new TestData { Id = Guid.NewGuid(), Time = DateTimeOffset.Now }
+            });
+        }
     }
 }
